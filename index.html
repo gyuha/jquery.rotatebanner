@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rotating Banner Using jQuery</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="jquery.rotateBanner.js" type="text/javascript"></script>
+<script src="jquery.mousewheel.min.js" type="text/javascript"></script>
+
+<body>
+<center>
+
+<style type="text/css">
+button { float:left }
+.btnSelected { float: left; margin:3px; width:20px; height:20px; background-color: #F00}
+.btnUnSelected { float: left; margin:3px; width:20px; height:20px; background-color: #EEE}
+</style>
+
+<div class="anyClass">
+    <ul>
+        <li><img src="img/1.png" alt="1" width="300" height="100" ></li>
+        <li><img src="img/2.jpg" alt="2" width="300" height="100" ></li>
+        <li><img src="img/3.jpg" alt="3" width="300" height="100" ></li>
+        <li><img src="img/4.jpg" alt="4" width="300" height="100" ></li>
+		<li><img src="img/5.jpg" alt="5" width="300" height="100" ></li>
+    </ul>
+	<div>
+		<button id="prev">PRE</button>
+		<div id="1" class="btnSelected"></div>
+		<div id="2" class="btnUnSelected"></div>
+		<div id="3" class="btnUnSelected"></div>
+		<div id="4" class="btnUnSelected"></div>
+		<div id="5" class="btnUnSelected"></div>
+		<button id="next">NEXT</button>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+$(function() {
+    $(".anyClass").rotateBanner({
+        btnNext: "#next",
+        btnPrev: "#prev",
+		auto: 3000,
+		speed: 1000,
+		mouseWheel: true,
+		btnGo: ["#1", "#2", "#3", "#4", "#5"],
+		btnSelectdCss: 'btnSelected',
+		btnUnSelectdCss: 'btnUnSelected'
+    });
+});
+</script>
+
+
+</center>
+</body>
+</html>
